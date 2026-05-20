@@ -5,7 +5,8 @@ import Link from "next/link";
 import { ArrowRight, Gift, CheckCircle2, Lock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Section } from "@/components/ui/section";
-import { BlobB, OrbitRings, DotGrid, LeafCluster } from "@/components/site/decor";
+import { BoxStack, ForecastCurve, DotGrid, BarChart } from "@/components/site/decor";
+import { SplitWords, ShimmerText, CountUp } from "@/components/site/animated-text";
 
 const bonuses = [
   {
@@ -44,10 +45,10 @@ export function Bonuses() {
   return (
     <Section id="bonuses" className="relative overflow-hidden">
       <div aria-hidden className="absolute inset-0 bg-grid-soft mask-fade-b opacity-40" />
-      <BlobB className="-top-32 -right-32 w-[460px] opacity-50 -z-10" />
-      <LeafCluster className="hidden md:block absolute top-20 left-6 w-28 text-[var(--color-accent)] opacity-25" />
-      <DotGrid className="absolute bottom-20 left-2 w-20 text-[var(--color-accent)] opacity-50 lg:hidden" />
-      <OrbitRings className="hidden lg:block absolute bottom-20 -right-32 w-[440px] text-[var(--color-accent-bright)]/40" />
+      <BoxStack className="absolute -top-8 -right-6 w-44 sm:w-56 text-[var(--color-accent)] opacity-50 animate-drift-slow -z-10" />
+      <BarChart className="hidden md:block absolute top-20 left-2 w-32 lg:w-40 text-[var(--color-accent)] opacity-35 -z-10" />
+      <DotGrid className="absolute bottom-20 left-2 w-20 text-[var(--color-accent)] opacity-50 lg:hidden -z-10" />
+      <ForecastCurve className="hidden lg:block absolute bottom-10 -right-10 w-[420px] h-40 text-[var(--color-accent-bright)] opacity-45 -z-10" />
       <div className="container-tight relative">
         <div className="max-w-3xl">
           <span className="inline-flex items-center gap-2 rounded-full bg-[var(--color-accent-soft)] px-3 py-1.5 text-xs font-medium text-[var(--color-accent)]">
@@ -55,7 +56,7 @@ export function Bonuses() {
             Bonuses for booking this week
           </span>
           <h2 className="mt-5 font-display text-3xl sm:text-4xl md:text-5xl leading-[1.06] font-semibold tracking-[-0.025em] text-balance">
-            Plus — when you book your demo this week, you get these bonuses free.
+            <SplitWords text="Plus — when you book your demo this week, you get these bonuses free." />
           </h2>
           <p className="mt-5 text-base md:text-lg text-[var(--color-muted)] text-pretty">
             Three things we normally only give to paid customers. Yours for booking the demo this week.
@@ -86,45 +87,56 @@ export function Bonuses() {
           ))}
         </div>
 
-        <div className="mt-16 md:mt-20 rounded-3xl bg-[var(--color-accent-deep)] text-white p-6 md:p-10 lg:p-14 overflow-hidden relative">
+        <div className="mt-16 md:mt-20 rounded-3xl bg-[var(--color-accent-deep)] text-white p-6 sm:p-8 md:p-10 lg:p-14 overflow-hidden relative">
           <div className="absolute inset-0 bg-noise opacity-15" />
           <div className="absolute -top-32 -right-32 size-[420px] rounded-full bg-[var(--color-accent-bright)]/20 blur-3xl" />
 
-          <div className="relative grid lg:grid-cols-12 gap-8 lg:gap-12">
-            <div className="lg:col-span-7">
-              <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1.5 text-xs font-medium text-white/85">
+          <div className="relative grid md:grid-cols-12 gap-8 md:gap-6 lg:gap-12">
+            <div className="md:col-span-7">
+              <span className="inline-flex flex-wrap items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1.5 text-[11px] sm:text-xs font-medium text-white/85">
                 <Lock className="size-3.5" />
-                Founding Customer Pricing — 247/500 spots taken
+                Founding Customer Pricing
+                <span className="text-white/55">·</span>
+                <span>
+                  <CountUp value={247} className="text-white" />/500 spots taken
+                </span>
               </span>
-              <h3 className="mt-5 font-display text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight text-white text-balance">
-                Let&apos;s recap everything you get when you book your demo this week.
+              <h3 className="mt-5 font-display text-2xl sm:text-3xl md:text-[28px] lg:text-4xl leading-[1.1] font-semibold tracking-tight text-white text-balance">
+                <SplitWords text="Let's recap everything you get when you book your demo this week." />
               </h3>
-              <p className="mt-4 text-white/75 leading-relaxed">
+              <p className="mt-4 text-sm md:text-[15px] text-white/75 leading-relaxed">
                 Plus what each piece would cost if you tried to build this stack yourself.
               </p>
 
-              <ul className="mt-7 space-y-2.5">
+              <ul className="mt-7 space-y-3 md:space-y-2.5">
                 {stack.map((row) => (
-                  <li key={row.label} className="flex items-start justify-between gap-4 text-sm leading-relaxed">
+                  <li
+                    key={row.label}
+                    className="flex flex-col xs:flex-row xs:items-start xs:justify-between gap-1 xs:gap-4 text-sm leading-relaxed"
+                  >
                     <span className="flex gap-2.5 text-white/85">
                       <CheckCircle2 className="size-4 text-[var(--color-accent-bright)] mt-0.5 shrink-0" />
-                      {row.label}
+                      <span>{row.label}</span>
                     </span>
-                    <span className="font-mono text-xs text-white/55 shrink-0">{row.value}</span>
+                    <span className="font-mono text-[11px] md:text-xs text-white/55 shrink-0 ml-6 xs:ml-0">
+                      {row.value}
+                    </span>
                   </li>
                 ))}
               </ul>
             </div>
 
-            <div className="lg:col-span-5">
-              <div className="rounded-3xl bg-white text-foreground p-6 md:p-8">
+            <div className="md:col-span-5">
+              <div className="rounded-3xl bg-white text-foreground p-6 md:p-6 lg:p-8 md:sticky md:top-24">
                 <div className="text-xs uppercase tracking-wider text-[var(--color-muted)]">Total value</div>
-                <div className="font-display text-4xl font-semibold tracking-tight mt-1">$4,567+</div>
-                <div className="mt-1 text-sm text-[var(--color-muted)]">
+                <div className="font-display text-3xl md:text-3xl lg:text-4xl font-semibold tracking-tight mt-1">
+                  <ShimmerText>$4,567+</ShimmerText>
+                </div>
+                <div className="mt-1 text-sm text-[var(--color-muted)] leading-snug">
                   Equivalent hire: a $80K–$120K/year Category Manager.
                 </div>
 
-                <div className="mt-6 p-5 rounded-2xl bg-[var(--color-accent-soft)] border border-[color-mix(in_oklab,var(--color-accent)_22%,transparent)]">
+                <div className="mt-5 lg:mt-6 p-4 lg:p-5 rounded-2xl bg-[var(--color-accent-soft)] border border-[color-mix(in_oklab,var(--color-accent)_22%,transparent)]">
                   <div className="text-xs uppercase tracking-wider text-[var(--color-accent)]">Today&apos;s price</div>
                   <div className="font-display text-3xl font-semibold tracking-tight text-[var(--color-accent-deep)] mt-1">
                     $0
@@ -134,14 +146,14 @@ export function Bonuses() {
                   </div>
                 </div>
 
-                <Button asChild variant="accent" size="lg" className="mt-6 w-full h-14">
+                <Button asChild variant="accent" size="lg" className="mt-5 lg:mt-6 w-full h-13 lg:h-14 text-[14px] md:text-[13px] lg:text-[15px] whitespace-normal px-4 leading-tight">
                   <Link href="#book">
-                    Book my demo — lock in founding pricing
+                    Book my demo — lock founding pricing
                     <ArrowRight />
                   </Link>
                 </Button>
-                <p className="mt-3 text-xs text-[var(--color-muted)] text-center">
-                  Founding Customer Pricing closes at 500 stores. We&apos;re past 247.
+                <p className="mt-3 text-[11px] md:text-xs text-[var(--color-muted)] text-center leading-snug">
+                  Founding Customer Pricing closes at 500 stores. Past 247.
                 </p>
               </div>
             </div>

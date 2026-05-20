@@ -13,7 +13,8 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Section } from "@/components/ui/section";
-import { OrbitRings, DotGrid } from "@/components/site/decor";
+import { InventoryNodes, SupplyChainLines, DotGrid, ForecastCurve } from "@/components/site/decor";
+import { SplitWords, CountUp } from "@/components/site/animated-text";
 
 const capabilities = [
   {
@@ -42,14 +43,26 @@ const benefits = [
   { icon: ClipboardCheck, label: "Full audit trail. Finance will love it." },
 ];
 
+function Stat({ value, suffix, label }: { value: number; suffix?: string; label: string }) {
+  return (
+    <div className="rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur p-3">
+      <div className="font-display text-2xl md:text-3xl font-semibold tracking-tight text-white">
+        <CountUp value={value} suffix={suffix} />
+      </div>
+      <div className="mt-0.5 text-[11px] uppercase tracking-wider text-white/60">{label}</div>
+    </div>
+  );
+}
+
 export function HowItWorks() {
   return (
     <Section id="how" className="relative overflow-hidden bg-[var(--color-accent-deep)] text-white">
       <div className="absolute inset-0 bg-noise opacity-15" />
       <div className="absolute -top-32 left-0 right-0 h-[480px] glow-orb-left opacity-40" />
       <div className="absolute -bottom-32 left-0 right-0 h-[480px] glow-orb-right opacity-40" />
-      <OrbitRings className="absolute -top-20 -left-32 w-[420px] text-white/30" />
-      <OrbitRings className="hidden md:block absolute -bottom-20 -right-32 w-[460px] text-white/25" />
+      <InventoryNodes className="absolute -top-10 -left-16 w-[360px] sm:w-[420px] text-white opacity-40" />
+      <ForecastCurve className="hidden md:block absolute -bottom-4 -right-8 w-[460px] h-44 text-[var(--color-accent-bright)] opacity-50" />
+      <SupplyChainLines className="absolute top-1/2 left-0 right-0 h-32 text-white opacity-20" />
       <DotGrid className="absolute top-1/3 right-3 w-24 text-white opacity-30 lg:hidden" />
       <DotGrid className="absolute bottom-40 left-2 w-20 text-white opacity-25 lg:hidden" />
 
@@ -60,8 +73,14 @@ export function HowItWorks() {
             By end of week one
           </span>
           <h2 className="mt-5 font-display text-3xl sm:text-4xl md:text-5xl lg:text-[52px] leading-[1.06] font-semibold tracking-[-0.025em] text-balance text-white">
-            Every replenishment and markdown decision in your store — handled without you opening a spreadsheet once.
+            <SplitWords text="Every replenishment and markdown decision in your store — handled without you opening a spreadsheet once." />
           </h2>
+
+          <div className="mt-8 grid grid-cols-3 gap-3 max-w-md">
+            <Stat value={247} suffix="+" label="Stores" />
+            <Stat value={2} suffix=" min" label="Setup" />
+            <Stat value={24} suffix="/7" label="Watching" />
+          </div>
           <p className="mt-6 max-w-2xl text-base md:text-lg text-white/75 text-pretty">
             This isn&apos;t another inventory dashboard. It&apos;s an agentic system that does the watching, runs the math, drafts the action, and only interrupts you when there&apos;s real money on the table. Most operators stop checking the app entirely after week two. The agent just runs.
           </p>

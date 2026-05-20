@@ -16,7 +16,8 @@ import {
 } from "lucide-react";
 import { Section } from "@/components/ui/section";
 import { Button } from "@/components/ui/button";
-import { BlobA, OrbitRings, DotGrid } from "@/components/site/decor";
+import { BoxStack, ForecastCurve, DotGrid, SupplyChainLines } from "@/components/site/decor";
+import { SplitWords } from "@/components/site/animated-text";
 
 type View = "form" | "thanks";
 
@@ -73,9 +74,10 @@ export function WaitlistCTA() {
     <Section id="book" className="relative overflow-hidden pb-24 md:pb-32">
       <div aria-hidden className="absolute inset-0 -z-10 bg-noise opacity-40" />
       <div aria-hidden className="absolute -top-32 -right-20 -z-10 size-[460px] rounded-full bg-[var(--color-accent-soft)] blur-3xl opacity-60" />
-      <BlobA className="-bottom-40 -left-32 w-[480px] opacity-60 -z-10" />
-      <OrbitRings className="hidden md:block absolute top-10 -left-32 w-[420px] text-[var(--color-accent)]/40 -z-10" />
-      <DotGrid className="absolute top-20 right-3 w-20 text-[var(--color-accent)] opacity-60 lg:hidden" />
+      <BoxStack className="absolute -top-6 -left-6 w-40 sm:w-52 text-[var(--color-accent)] opacity-45 animate-drift-slow -z-10" />
+      <ForecastCurve className="hidden md:block absolute -bottom-2 -right-10 w-[420px] h-40 text-[var(--color-accent)] opacity-40 -z-10" />
+      <SupplyChainLines className="absolute top-40 left-0 right-0 h-28 text-[var(--color-accent)] opacity-35 -z-10" />
+      <DotGrid className="absolute top-20 right-3 w-20 text-[var(--color-accent)] opacity-60 lg:hidden -z-10" />
 
       <div className="container-tight">
         <AnimatePresence mode="wait">
@@ -93,28 +95,28 @@ export function WaitlistCTA() {
                   <Sparkles className="size-3.5" />
                   247+ stores booked this month
                 </span>
-                <h2 className="mt-5 font-display text-3xl sm:text-4xl md:text-5xl leading-[1.05] font-semibold tracking-[-0.025em] text-balance">
-                  You&apos;re one step away from meeting your AI Category Manager.
+                <h2 className="mt-5 font-display text-3xl sm:text-4xl md:text-[40px] md:leading-[1.05] lg:text-5xl lg:leading-[1.05] font-semibold tracking-[-0.025em] text-balance">
+                  <SplitWords text="You're one step away from meeting your AI Category Manager." />
                 </h2>
-                <p className="mt-5 text-base md:text-lg text-[var(--color-muted)] text-pretty">
+                <p className="mt-5 text-base md:text-[15px] lg:text-lg text-[var(--color-muted)] text-pretty">
                   Pick a 20-minute slot. We&apos;ll install Replenish live, connect your channel, and the agent will message you with your first real opportunity — before we hang up.
                 </p>
 
-                <ul className="mt-8 space-y-3">
+                <div className="mt-8 grid sm:grid-cols-2 lg:grid-cols-1 gap-3 lg:gap-0 lg:space-y-3">
                   {[
-                    "20-minute personalized demo & live install",
+                    "20-min personalized demo & live install",
                     "Free Inventory Leak Audit on your store",
                     "14-day full-access trial of Replenish",
-                    "Founding Customer Pricing (if you subscribe by trial end)",
+                    "Founding Customer Pricing (if you subscribe)",
                   ].map((line) => (
-                    <li key={line} className="flex items-start gap-3 text-sm text-foreground/90">
+                    <div key={line} className="flex items-start gap-3 text-sm text-foreground/90">
                       <CheckCircle2 className="size-4.5 text-[var(--color-accent)] mt-0.5 shrink-0" />
-                      {line}
-                    </li>
+                      <span>{line}</span>
+                    </div>
                   ))}
-                </ul>
+                </div>
 
-                <div className="mt-8 rounded-2xl bg-[var(--color-accent-soft)]/60 hairline p-5 text-sm text-foreground/85">
+                <div className="mt-7 lg:mt-8 rounded-2xl bg-[var(--color-accent-soft)]/60 hairline p-5 text-sm text-foreground/85">
                   <div className="font-display text-base font-semibold tracking-tight">
                     Total: $0 · Free
                   </div>
@@ -127,7 +129,7 @@ export function WaitlistCTA() {
               <div className="lg:col-span-7">
                 <form
                   onSubmit={onSubmit}
-                  className="relative rounded-3xl bg-white hairline shadow-[var(--shadow-lifted)] p-6 md:p-8"
+                  className="relative rounded-3xl bg-white hairline shadow-[var(--shadow-lifted)] p-5 sm:p-6 md:p-7 lg:p-8"
                 >
                   <div className="flex items-center justify-between">
                     <div className="text-xs uppercase tracking-wider text-[var(--color-muted)]">
@@ -176,7 +178,7 @@ export function WaitlistCTA() {
                     <label className="text-xs font-medium text-[var(--color-muted)]">
                       Approximate annual GMV
                     </label>
-                    <div className="mt-2 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2">
+                    <div className="mt-2 grid grid-cols-2 xs:grid-cols-3 md:grid-cols-5 gap-2">
                       {gmvBands.map((b) => (
                         <button
                           key={b}
@@ -198,7 +200,7 @@ export function WaitlistCTA() {
                     <label className="text-xs font-medium text-[var(--color-muted)]">
                       Preferred agent channel
                     </label>
-                    <div className="mt-2 grid grid-cols-3 gap-2">
+                    <div className="mt-2 grid grid-cols-1 xs:grid-cols-3 gap-2">
                       {channels.map((c) => (
                         <button
                           key={c.value}
@@ -227,8 +229,8 @@ export function WaitlistCTA() {
                       </span>
                     </div>
 
-                    <div className="mt-2 -mx-6 md:mx-0 sm:hidden">
-                      <div className="scroll-snap-x flex gap-2 overflow-x-auto px-6 pb-2">
+                    <div className="mt-2 -mx-5 sm:-mx-6 md:mx-0 xs:hidden">
+                      <div className="scroll-snap-x flex gap-2 overflow-x-auto px-5 sm:px-6 pb-2">
                         {slots.map((s, i) => (
                           <button
                             key={i}
@@ -252,7 +254,7 @@ export function WaitlistCTA() {
                       </div>
                     </div>
 
-                    <div className="mt-2 hidden sm:grid sm:grid-cols-4 gap-2">
+                    <div className="mt-2 hidden xs:grid xs:grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2">
                       {slots.map((s, i) => (
                         <button
                           key={i}

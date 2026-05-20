@@ -5,15 +5,16 @@ import Link from "next/link";
 import { ArrowRight, Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Section } from "@/components/ui/section";
-import { BlobB, DotGrid, WaveLine } from "@/components/site/decor";
+import { BarChart, DotGrid, ChatDots, WaveLine } from "@/components/site/decor";
+import { SplitWords } from "@/components/site/animated-text";
 
 export function DayInLife() {
   return (
     <Section id="sales" className="relative overflow-hidden">
       <div aria-hidden className="absolute inset-0 bg-grid-soft mask-fade-b opacity-50" />
-      <BlobB className="-top-32 -right-40 w-[520px] opacity-50 -z-10" />
-      <DotGrid className="absolute top-16 right-3 w-20 text-[var(--color-accent)] opacity-50 lg:hidden" />
-      <DotGrid className="absolute bottom-40 left-2 w-24 text-[var(--color-accent)] opacity-40 lg:hidden" />
+      <BarChart className="absolute -top-2 right-2 sm:right-10 w-32 sm:w-48 text-[var(--color-accent)] opacity-50 -z-10" />
+      <ChatDots className="absolute top-1/3 right-2 w-24 text-[var(--color-accent)] opacity-45 lg:hidden -z-10" />
+      <DotGrid className="absolute bottom-40 left-2 w-20 text-[var(--color-accent)] opacity-45 lg:hidden -z-10" />
       <div className="container-tight relative">
         <div className="max-w-3xl">
           <motion.span
@@ -96,7 +97,7 @@ export function DayInLife() {
         <div className="mt-16 md:mt-24 grid lg:grid-cols-12 gap-8 lg:gap-12">
           <div className="lg:col-span-5">
             <h3 className="font-display text-2xl sm:text-3xl md:text-4xl font-semibold tracking-[-0.02em] leading-tight">
-              You&apos;re one AI Category Manager away from getting your Sunday nights back.
+              <SplitWords text="You're one AI Category Manager away from getting your Sunday nights back." />
             </h3>
             <p className="mt-4 text-[var(--color-muted)] leading-relaxed">
               The $50M+ brands you watch on TikTok have someone whose only job is to make sure they never stock out and never overbuy. That person costs $80K–$120K a year. You can&apos;t afford one yet — so you&apos;re doing the job yourself at 9pm on a Sunday, and you&apos;re losing money to it every week.

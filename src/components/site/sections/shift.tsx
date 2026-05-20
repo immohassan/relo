@@ -5,7 +5,8 @@ import Link from "next/link";
 import { ArrowRight, Plug, TrendingDown, Truck, MapPin, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Section } from "@/components/ui/section";
-import { BlobA, BlobB, DotGrid } from "@/components/site/decor";
+import { BoxStack, ForecastCurve, DotGrid, SupplyChainLines } from "@/components/site/decor";
+import { SplitWords } from "@/components/site/animated-text";
 
 const days = [
   {
@@ -49,9 +50,10 @@ export function Shift() {
   return (
     <Section id="timeline" className="relative overflow-hidden">
       <div aria-hidden className="absolute inset-0 bg-diagonal opacity-70" />
-      <BlobA className="-top-32 -left-32 w-[460px] opacity-60 -z-10" />
-      <BlobB className="hidden md:block -bottom-32 -right-32 w-[520px] opacity-50 -z-10" />
-      <DotGrid className="absolute top-1/3 right-2 w-20 text-[var(--color-accent)] opacity-50 lg:hidden" />
+      <BoxStack className="absolute -top-6 -left-6 w-40 sm:w-52 text-[var(--color-accent)] opacity-50 animate-drift-slow -z-10" />
+      <ForecastCurve className="hidden md:block absolute top-10 -right-10 w-[420px] h-40 text-[var(--color-accent)] opacity-40 -z-10" />
+      <SupplyChainLines className="absolute bottom-10 left-0 right-0 h-32 text-[var(--color-accent)] opacity-40 -z-10" />
+      <DotGrid className="absolute top-1/3 right-2 w-20 text-[var(--color-accent)] opacity-50 lg:hidden -z-10" />
       <div className="container-tight relative">
         <div className="max-w-3xl">
           <span className="inline-flex items-center gap-2 rounded-full bg-white hairline px-3 py-1.5 text-xs font-medium text-[var(--color-accent)]">
@@ -59,7 +61,7 @@ export function Shift() {
             What your agent does in the first 5 days
           </span>
           <h2 className="mt-5 font-display text-3xl sm:text-4xl md:text-5xl lg:text-[52px] leading-[1.05] font-semibold tracking-[-0.025em] text-balance">
-            Here&apos;s exactly what your AI Category Manager does in the first 5 days after install.
+            <SplitWords text="Here's exactly what your AI Category Manager does in the first 5 days after install." />
           </h2>
           <p className="mt-5 text-base md:text-lg text-[var(--color-muted)] text-pretty">
             Most operators see their first 5-figure opportunity inside the first 24 hours. Here&apos;s the full week.

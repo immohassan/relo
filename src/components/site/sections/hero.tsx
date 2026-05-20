@@ -12,7 +12,16 @@ import {
   Bell,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { BlobA, BlobB, DotGrid, OrbitRings, SparkLine, WaveLine } from "@/components/site/decor";
+import {
+  BoxStack,
+  BarChart,
+  SupplyChainLines,
+  ForecastCurve,
+  DotGrid,
+  SparkLine,
+  WaveLine,
+} from "@/components/site/decor";
+import { SplitWords, ShimmerText, TypewriterRotate } from "@/components/site/animated-text";
 
 export function Hero() {
   const [email, setEmail] = React.useState("");
@@ -27,11 +36,12 @@ export function Hero() {
 
   return (
     <section className="relative overflow-hidden">
-      <BlobA className="-top-24 -left-32 w-[420px] sm:w-[520px] opacity-90 animate-float -z-10" />
-      <BlobB className="top-32 -right-40 w-[460px] sm:w-[560px] -z-10" />
-      <OrbitRings className="hidden md:block absolute top-10 right-[-180px] w-[520px] text-[var(--color-accent)]/40 -z-10" />
-      <DotGrid className="absolute top-[55%] -left-6 w-32 text-[var(--color-accent)] opacity-60 -z-10" />
-      <DotGrid className="absolute bottom-12 right-4 w-24 text-[var(--color-accent)] opacity-60 -z-10 lg:hidden" />
+      <BoxStack className="absolute -top-6 -left-10 sm:-top-10 sm:-left-16 w-44 sm:w-56 text-[var(--color-accent)] opacity-70 animate-drift-slow -z-10" />
+      <ForecastCurve className="hidden md:block absolute top-32 right-[-40px] w-[420px] h-40 text-[var(--color-accent)] opacity-40 -z-10" />
+      <SupplyChainLines className="absolute -bottom-4 left-0 right-0 h-32 text-[var(--color-accent)] opacity-50 -z-10" />
+      <DotGrid className="absolute top-[58%] -left-6 w-28 text-[var(--color-accent)] opacity-50 -z-10" />
+      <DotGrid className="absolute bottom-24 right-4 w-20 text-[var(--color-accent)] opacity-55 -z-10 lg:hidden" />
+      <BarChart className="absolute top-2 right-2 w-24 text-[var(--color-accent)] opacity-50 lg:hidden -z-10" />
       <div className="absolute inset-0 -z-10 bg-noise opacity-40" />
 
       <div className="container-tight pt-8 sm:pt-12 lg:pt-20 pb-16 md:pb-24">
@@ -44,24 +54,25 @@ export function Hero() {
               className="inline-flex items-center gap-2 rounded-full bg-white hairline px-3 py-1.5 text-[11px] sm:text-xs font-medium text-[var(--color-accent)]"
             >
               <Sparkles className="size-3.5" />
-              Free instant access
-              <span className="text-[var(--color-muted)]">·</span>
-              <span className="text-[var(--color-muted)]">No credit card</span>
+              <span className="text-[var(--color-muted)]">For Shopify operators losing money on</span>
+              <TypewriterRotate
+                words={["stockouts", "markdowns", "overbuying", "Sunday spreadsheets"]}
+                className="text-[var(--color-accent)] min-w-[110px]"
+              />
             </motion.div>
 
-            <motion.h1
-              initial={{ opacity: 0, y: 18 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.05 }}
-              className="mt-5 font-display text-[34px] leading-[1.05] sm:text-5xl md:text-6xl lg:text-[64px] lg:leading-[1.04] font-semibold tracking-[-0.03em] text-foreground text-balance"
-            >
-              The 5-day email series that shows where your Shopify store is{" "}
+            <h1 className="mt-5 font-display text-[34px] leading-[1.05] sm:text-5xl md:text-6xl lg:text-[64px] lg:leading-[1.04] font-semibold tracking-[-0.03em] text-foreground text-balance">
+              <SplitWords text="The 5-day email series showing where your Shopify store is" />{" "}
               <span className="relative inline-block">
-                <span className="relative z-10 text-[var(--color-accent)]">leaking money</span>
+                <ShimmerText className="relative z-10">leaking money</ShimmerText>
                 <WaveLine className="absolute -bottom-2 left-0 right-0 h-3 text-[var(--color-accent-bright)]" />
               </span>
-              {" "}— and how an AI Category Manager fixes it on autopilot.
-            </motion.h1>
+              {" "}
+              <SplitWords
+                text="— and how an AI Category Manager fixes it on autopilot."
+                delay={0.4}
+              />
+            </h1>
 
             <motion.p
               initial={{ opacity: 0, y: 14 }}

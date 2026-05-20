@@ -5,7 +5,8 @@ import Link from "next/link";
 import { ArrowRight, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Section } from "@/components/ui/section";
-import { BlobA, DotGrid, OrbitRings, LeafCluster } from "@/components/site/decor";
+import { BoxStack, DotGrid, InventoryNodes, SupplyChainLines, ChatDots } from "@/components/site/decor";
+import { SplitWords, ShimmerText } from "@/components/site/animated-text";
 
 const testimonials = [
   {
@@ -57,9 +58,9 @@ export function Proof() {
     <>
       <Section id="about" className="relative overflow-hidden">
         <div aria-hidden className="absolute inset-0 bg-dotted-soft opacity-40 mask-fade-b" />
-        <BlobA className="-top-20 -right-32 w-[380px] sm:w-[480px] opacity-70 -z-10" />
-        <LeafCluster className="hidden sm:block absolute top-10 left-4 w-24 text-[var(--color-accent)] opacity-30" />
-        <DotGrid className="absolute bottom-20 right-2 w-24 text-[var(--color-accent)] opacity-50 lg:hidden" />
+        <BoxStack className="absolute -top-4 -right-6 w-40 sm:w-52 text-[var(--color-accent)] opacity-45 animate-drift-slow -z-10" />
+        <ChatDots className="hidden sm:block absolute top-10 left-4 w-32 text-[var(--color-accent)] opacity-40 -z-10" />
+        <DotGrid className="absolute bottom-20 right-2 w-24 text-[var(--color-accent)] opacity-50 lg:hidden -z-10" />
         <div className="container-tight relative">
           <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-start">
             <div className="lg:col-span-5">
@@ -68,7 +69,7 @@ export function Proof() {
                 About me
               </span>
               <h2 className="mt-5 font-display text-3xl sm:text-4xl md:text-5xl leading-[1.05] font-semibold tracking-[-0.025em] text-balance">
-                Hello — I&apos;m <span className="text-[var(--color-accent)]">Marcus Hale</span>.
+                Hello — I&apos;m <ShimmerText>Marcus Hale</ShimmerText>.
               </h2>
 
               <div className="mt-8 relative max-w-md">
@@ -117,8 +118,9 @@ export function Proof() {
       </Section>
 
       <Section id="testimonials" className="relative overflow-hidden bg-[var(--color-surface-2)]">
-        <OrbitRings className="hidden md:block absolute -top-10 -right-32 w-[440px] text-[var(--color-accent)]/50" />
-        <BlobA className="-bottom-32 -left-20 w-[420px] opacity-60 -z-10" />
+        <InventoryNodes className="hidden md:block absolute -top-10 -right-20 w-[360px] text-[var(--color-accent)] opacity-50" />
+        <SupplyChainLines className="absolute bottom-10 left-0 right-0 h-32 text-[var(--color-accent)] opacity-40 -z-10" />
+        <BoxStack className="absolute -bottom-6 -left-6 w-44 text-[var(--color-accent)] opacity-45 -z-10" />
         <div className="container-tight relative">
           <div className="max-w-3xl">
             <span className="inline-flex items-center gap-2 rounded-full bg-white hairline px-3 py-1.5 text-xs font-medium text-[var(--color-accent)]">
@@ -126,7 +128,7 @@ export function Proof() {
               Testimonials
             </span>
             <h2 className="mt-5 font-display text-3xl sm:text-4xl md:text-5xl leading-[1.05] font-semibold tracking-[-0.025em] text-balance">
-              What operators say after the first 14 days.
+              <SplitWords text="What operators say after the first 14 days." />
             </h2>
             <p className="mt-5 text-base md:text-lg text-[var(--color-muted)] text-pretty">
               Real merchants. Real numbers. Names redacted until each operator publishes their own case study.

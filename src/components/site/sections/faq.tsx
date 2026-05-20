@@ -4,7 +4,8 @@ import * as React from "react";
 import * as Accordion from "@radix-ui/react-accordion";
 import { Plus, MessageCircleQuestion } from "lucide-react";
 import { Section } from "@/components/ui/section";
-import { DotGrid, LeafCluster } from "@/components/site/decor";
+import { DotGrid, ChatDots, BoxStack } from "@/components/site/decor";
+import { SplitWords } from "@/components/site/animated-text";
 
 const faqs = [
   {
@@ -37,8 +38,9 @@ export function FAQ() {
   return (
     <Section id="faq" className="relative overflow-hidden">
       <div aria-hidden className="absolute inset-0 bg-grid-soft opacity-30 mask-fade-b" />
-      <LeafCluster className="hidden md:block absolute top-12 right-8 w-24 text-[var(--color-accent)] opacity-25" />
-      <DotGrid className="absolute bottom-10 left-2 w-20 text-[var(--color-accent)] opacity-50 lg:hidden" />
+      <ChatDots className="hidden md:block absolute top-12 right-6 w-32 text-[var(--color-accent)] opacity-40 -z-10" />
+      <BoxStack className="hidden lg:block absolute bottom-10 left-4 w-32 text-[var(--color-accent)] opacity-40 -z-10" />
+      <DotGrid className="absolute bottom-10 left-2 w-20 text-[var(--color-accent)] opacity-50 lg:hidden -z-10" />
       <div className="container-tight relative">
         <div className="grid lg:grid-cols-12 gap-10 lg:gap-16">
           <div className="lg:col-span-4">
@@ -47,7 +49,7 @@ export function FAQ() {
               FAQ
             </span>
             <h2 className="mt-5 font-display text-3xl sm:text-4xl md:text-5xl leading-[1.05] font-semibold tracking-[-0.025em] text-balance">
-              Frequently asked questions.
+              <SplitWords text="Frequently asked questions." />
             </h2>
             <p className="mt-5 text-[var(--color-muted)] text-pretty">
               Still curious? We answer all of these live during the demo — with your real store data on screen.
