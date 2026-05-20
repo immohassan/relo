@@ -63,21 +63,23 @@ export function DayInLife() {
           <div className="relative aspect-video w-full rounded-3xl bg-[var(--color-accent-deep)] overflow-hidden hairline shadow-[var(--shadow-lifted)]">
             <div className="absolute inset-0 bg-gradient-to-br from-[var(--color-accent-deep)] via-[var(--color-accent)] to-[var(--color-accent-bright)]/40 opacity-90" />
             <div className="absolute inset-0 bg-noise opacity-20" />
-            <div className="absolute inset-0 grid place-items-center">
-              <button className="group inline-flex flex-col items-center gap-3 text-white">
-                <span className="grid place-items-center size-16 md:size-20 rounded-full bg-white text-[var(--color-accent)] shadow-[0_0_0_8px_rgba(255,255,255,0.15)] group-hover:scale-105 transition-transform">
-                  <Play className="size-7 md:size-8 fill-current ml-1" />
+            <div className="absolute inset-0 grid place-items-center px-4">
+              <button className="group inline-flex flex-col items-center gap-2 sm:gap-3 text-white text-center">
+                <span className="grid place-items-center size-12 sm:size-16 md:size-20 rounded-full bg-white text-[var(--color-accent)] shadow-[0_0_0_6px_rgba(255,255,255,0.12)] sm:shadow-[0_0_0_8px_rgba(255,255,255,0.15)] group-hover:scale-105 transition-transform">
+                  <Play className="size-5 sm:size-7 md:size-8 fill-current ml-0.5" />
                 </span>
-                <span className="font-display text-base md:text-lg font-medium tracking-tight">
-                  Watch the 90-second walkthrough · sound on
+                <span className="font-display text-[11px] sm:text-base md:text-lg font-medium tracking-tight max-w-[200px] sm:max-w-none leading-snug">
+                  <span className="sm:hidden">90s walkthrough · sound on</span>
+                  <span className="hidden sm:inline">Watch the 90-second walkthrough · sound on</span>
                 </span>
               </button>
             </div>
-            <div className="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6 flex flex-wrap items-center justify-between gap-2 text-white/85 text-xs sm:text-sm">
-              <span className="inline-flex items-center gap-2 rounded-full bg-black/30 backdrop-blur px-3 py-1.5">
-                💬 Real WhatsApp conversation — stockout risk → PO sent in 4 messages
+            <div className="absolute bottom-3 left-3 right-3 sm:bottom-6 sm:left-6 sm:right-6 flex items-center justify-between gap-2 text-white/85 text-[10px] sm:text-sm">
+              <span className="inline-flex items-center gap-1.5 rounded-full bg-black/35 backdrop-blur px-2 sm:px-3 py-1 sm:py-1.5 truncate max-w-[70%] sm:max-w-none">
+                <span className="sm:hidden">💬 Stockout → PO in 4 msgs</span>
+                <span className="hidden sm:inline">💬 Real WhatsApp — stockout → PO sent in 4 messages</span>
               </span>
-              <span className="rounded-full bg-black/30 backdrop-blur px-3 py-1.5">1:32</span>
+              <span className="rounded-full bg-black/35 backdrop-blur px-2 sm:px-3 py-1 sm:py-1.5 shrink-0">1:32</span>
             </div>
           </div>
 

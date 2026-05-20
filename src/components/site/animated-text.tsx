@@ -23,7 +23,7 @@ export function SplitWords({ text, className, delay = 0, stagger = 0.045 }: Spli
     },
   };
   const word: Variants = {
-    hidden: { y: "0.55em", opacity: 0, filter: "blur(6px)" },
+    hidden: { y: "0.35em", opacity: 0, filter: "blur(6px)" },
     show: {
       y: 0,
       opacity: 1,
@@ -38,16 +38,19 @@ export function SplitWords({ text, className, delay = 0, stagger = 0.045 }: Spli
       variants={container}
       initial="hidden"
       animate={inView ? "show" : "hidden"}
-      className={cn("inline-block", className)}
+      className={cn("inline", className)}
       aria-label={text}
     >
       {words.map((w, i) => (
-        <span key={i} className="inline-block overflow-hidden align-bottom">
-          <motion.span variants={word} className="inline-block will-change-transform">
-            {w}
-            {i < words.length - 1 ? " " : ""}
-          </motion.span>
-        </span>
+        <motion.span
+          key={i}
+          variants={word}
+          className="inline-block will-change-transform"
+          style={{ paddingBottom: "0.08em" }}
+        >
+          {w}
+          {i < words.length - 1 ? " " : ""}
+        </motion.span>
       ))}
     </motion.span>
   );
