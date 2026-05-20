@@ -60,7 +60,7 @@ export function Shift() {
             <span className="size-1.5 rounded-full bg-[var(--color-accent-bright)]" />
             What your agent does in the first 5 days
           </span>
-          <h2 className="mt-5 font-display text-3xl sm:text-4xl md:text-5xl lg:text-[52px] leading-[1.05] font-semibold tracking-[-0.025em] text-balance">
+          <h2 className="mt-5 font-display text-[26px] leading-[1.1] xs:text-3xl sm:text-4xl md:text-5xl lg:text-[52px] lg:leading-[1.05] font-semibold tracking-[-0.02em] text-balance">
             <SplitWords text="Here's exactly what your AI Category Manager does in the first 5 days after install." />
           </h2>
           <p className="mt-5 text-base md:text-lg text-[var(--color-muted)] text-pretty">
@@ -71,7 +71,7 @@ export function Shift() {
         <div className="mt-10 md:mt-16 relative">
           <div
             aria-hidden
-            className="absolute left-6 lg:left-[calc(2.5rem-1px)] top-2 bottom-2 w-px bg-gradient-to-b from-transparent via-[var(--color-border-strong)] to-transparent lg:via-[var(--color-border-strong)]"
+            className="absolute left-5 xs:left-[22px] sm:left-6 lg:left-[calc(2.5rem-1px)] top-2 bottom-2 w-px bg-gradient-to-b from-transparent via-[var(--color-border-strong)] to-transparent lg:via-[var(--color-border-strong)]"
           />
           <div className="space-y-5 lg:space-y-4">
             {days.map((d, i) => (
@@ -81,10 +81,10 @@ export function Shift() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-80px" }}
                 transition={{ duration: 0.5, delay: i * 0.06 }}
-                className="relative grid lg:grid-cols-12 gap-3 lg:gap-6 items-start pl-16 lg:pl-0"
+                className="relative grid lg:grid-cols-12 gap-3 lg:gap-6 items-start pl-12 xs:pl-14 sm:pl-16 lg:pl-0"
               >
-                <span className="absolute left-0 lg:hidden grid place-items-center size-12 rounded-2xl bg-[var(--color-accent)] text-white font-display font-semibold ring-4 ring-[var(--color-background)]">
-                  <span className="text-base">{d.n}</span>
+                <span className="absolute left-0 lg:hidden grid place-items-center size-10 xs:size-11 sm:size-12 rounded-2xl bg-[var(--color-accent)] text-white font-display font-semibold ring-4 ring-[var(--color-background)]">
+                  <span className="text-sm xs:text-base">{d.n}</span>
                 </span>
 
                 <div className="hidden lg:flex lg:col-span-3 lg:flex-col items-start gap-4 lg:sticky lg:top-24">

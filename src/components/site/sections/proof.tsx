@@ -68,7 +68,7 @@ export function Proof() {
                 <span className="size-1.5 rounded-full bg-[var(--color-accent-bright)]" />
                 About me
               </span>
-              <h2 className="mt-5 font-display text-3xl sm:text-4xl md:text-5xl leading-[1.05] font-semibold tracking-[-0.025em] text-balance">
+              <h2 className="mt-5 font-display text-[28px] leading-[1.08] xs:text-3xl sm:text-4xl md:text-5xl md:leading-[1.05] font-semibold tracking-[-0.02em] text-balance">
                 Hello — I&apos;m <ShimmerText>Marcus Hale</ShimmerText>.
               </h2>
 
@@ -127,7 +127,7 @@ export function Proof() {
               <Star className="size-3.5 fill-current" />
               Testimonials
             </span>
-            <h2 className="mt-5 font-display text-3xl sm:text-4xl md:text-5xl leading-[1.05] font-semibold tracking-[-0.025em] text-balance">
+            <h2 className="mt-5 font-display text-[26px] leading-[1.1] xs:text-3xl sm:text-4xl md:text-5xl md:leading-[1.05] font-semibold tracking-[-0.02em] text-balance">
               <SplitWords text="What operators say after the first 14 days." />
             </h2>
             <p className="mt-5 text-base md:text-lg text-[var(--color-muted)] text-pretty">

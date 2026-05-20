@@ -43,7 +43,7 @@ const gmvBands = [
 const channels = [
   { value: "whatsapp", label: "WhatsApp" },
   { value: "slack", label: "Slack" },
-  { value: "either", label: "Decide on the call" },
+  { value: "either", label: "Either" },
 ];
 
 export function WaitlistCTA() {
@@ -95,7 +95,7 @@ export function WaitlistCTA() {
                   <Sparkles className="size-3.5" />
                   247+ stores booked this month
                 </span>
-                <h2 className="mt-5 font-display text-3xl sm:text-4xl md:text-[40px] md:leading-[1.05] lg:text-5xl lg:leading-[1.05] font-semibold tracking-[-0.025em] text-balance">
+                <h2 className="mt-5 font-display text-[26px] leading-[1.1] xs:text-3xl sm:text-4xl md:text-[40px] md:leading-[1.05] lg:text-5xl lg:leading-[1.05] font-semibold tracking-[-0.02em] text-balance">
                   <SplitWords text="You're one step away from meeting your AI Category Manager." />
                 </h2>
                 <p className="mt-5 text-base md:text-[15px] lg:text-lg text-[var(--color-muted)] text-pretty">
@@ -129,19 +129,20 @@ export function WaitlistCTA() {
               <div className="lg:col-span-7">
                 <form
                   onSubmit={onSubmit}
-                  className="relative rounded-3xl bg-white hairline shadow-[var(--shadow-lifted)] p-5 sm:p-6 md:p-7 lg:p-8"
+                  className="relative rounded-3xl bg-white hairline shadow-[var(--shadow-lifted)] p-4 xs:p-5 sm:p-6 md:p-7 lg:p-8"
                 >
-                  <div className="flex items-center justify-between">
+                  <div className="flex flex-wrap items-center justify-between gap-2">
                     <div className="text-xs uppercase tracking-wider text-[var(--color-muted)]">
                       Reserve your slot
                     </div>
-                    <div className="inline-flex items-center gap-1.5 text-xs text-[var(--color-muted)]">
+                    <div className="inline-flex items-center gap-1.5 text-[11px] sm:text-xs text-[var(--color-muted)]">
                       <ShieldCheck className="size-3.5" />
-                      Secure · we don&apos;t sell your data
+                      <span className="hidden xs:inline">Secure · we don&apos;t sell your data</span>
+                      <span className="xs:hidden">Secure</span>
                     </div>
                   </div>
 
-                  <div className="mt-6 grid sm:grid-cols-2 gap-3">
+                  <div className="mt-5 grid sm:grid-cols-2 gap-3">
                     <Field
                       label="First name"
                       icon={<Mail className="size-4" />}
@@ -163,7 +164,7 @@ export function WaitlistCTA() {
                       icon={<Store className="size-4" />}
                       value={form.store}
                       onChange={(v) => onChange("store", v)}
-                      placeholder="yourbrand.myshopify.com"
+                      placeholder="brand.myshopify.com"
                     />
                     <Field
                       label="Country"
@@ -178,7 +179,7 @@ export function WaitlistCTA() {
                     <label className="text-xs font-medium text-[var(--color-muted)]">
                       Approximate annual GMV
                     </label>
-                    <div className="mt-2 grid grid-cols-2 xs:grid-cols-3 md:grid-cols-5 gap-2">
+                    <div className="mt-2 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-1.5 sm:gap-2">
                       {gmvBands.map((b) => (
                         <button
                           key={b}
@@ -186,8 +187,8 @@ export function WaitlistCTA() {
                           onClick={() => onChange("gmv", b)}
                           className={
                             form.gmv === b
-                              ? "h-11 rounded-full px-3 text-[12.5px] font-medium bg-[var(--color-accent)] text-white tap-feedback"
-                              : "h-11 rounded-full px-3 text-[12.5px] font-medium bg-[var(--color-surface-2)] text-foreground/80 active:bg-[var(--color-accent-soft)] tap-feedback"
+                              ? "h-10 sm:h-11 rounded-full px-2 sm:px-3 text-[11.5px] sm:text-[12.5px] font-medium bg-[var(--color-accent)] text-white tap-feedback whitespace-nowrap"
+                              : "h-10 sm:h-11 rounded-full px-2 sm:px-3 text-[11.5px] sm:text-[12.5px] font-medium bg-[var(--color-surface-2)] text-foreground/80 active:bg-[var(--color-accent-soft)] tap-feedback whitespace-nowrap"
                           }
                         >
                           {b}
@@ -200,7 +201,7 @@ export function WaitlistCTA() {
                     <label className="text-xs font-medium text-[var(--color-muted)]">
                       Preferred agent channel
                     </label>
-                    <div className="mt-2 grid grid-cols-1 xs:grid-cols-3 gap-2">
+                    <div className="mt-2 grid grid-cols-3 gap-1.5 sm:gap-2">
                       {channels.map((c) => (
                         <button
                           key={c.value}
@@ -208,8 +209,8 @@ export function WaitlistCTA() {
                           onClick={() => onChange("channel", c.value)}
                           className={
                             form.channel === c.value
-                              ? "h-12 rounded-2xl px-3 text-[13px] font-medium bg-[var(--color-accent)] text-white tap-feedback"
-                              : "h-12 rounded-2xl px-3 text-[13px] font-medium bg-[var(--color-surface-2)] text-foreground/80 active:bg-[var(--color-accent-soft)] tap-feedback"
+                              ? "h-11 sm:h-12 rounded-xl sm:rounded-2xl px-2 sm:px-3 text-[12px] sm:text-[13px] font-medium bg-[var(--color-accent)] text-white tap-feedback whitespace-nowrap"
+                              : "h-11 sm:h-12 rounded-xl sm:rounded-2xl px-2 sm:px-3 text-[12px] sm:text-[13px] font-medium bg-[var(--color-surface-2)] text-foreground/80 active:bg-[var(--color-accent-soft)] tap-feedback whitespace-nowrap"
                           }
                         >
                           {c.label}
@@ -229,8 +230,8 @@ export function WaitlistCTA() {
                       </span>
                     </div>
 
-                    <div className="mt-2 -mx-5 sm:-mx-6 md:mx-0 xs:hidden">
-                      <div className="scroll-snap-x flex gap-2 overflow-x-auto px-5 sm:px-6 pb-2">
+                    <div className="mt-2 -mx-4 xs:-mx-5 sm:mx-0 sm:hidden">
+                      <div className="scroll-snap-x flex gap-2 overflow-x-auto px-4 xs:px-5 pb-2">
                         {slots.map((s, i) => (
                           <button
                             key={i}
@@ -238,8 +239,8 @@ export function WaitlistCTA() {
                             onClick={() => setSlot(i)}
                             className={
                               slot === i
-                                ? "snap-card shrink-0 w-[42%] rounded-2xl border-2 border-[var(--color-accent)] bg-[var(--color-accent-soft)] px-3 py-3 text-left tap-feedback"
-                                : "snap-card shrink-0 w-[42%] rounded-2xl border border-[var(--color-border-strong)] bg-white px-3 py-3 text-left tap-feedback"
+                                ? "snap-card shrink-0 w-[44%] xs:w-[42%] rounded-2xl border-2 border-[var(--color-accent)] bg-[var(--color-accent-soft)] px-3 py-3 text-left tap-feedback"
+                                : "snap-card shrink-0 w-[44%] xs:w-[42%] rounded-2xl border border-[var(--color-border-strong)] bg-white px-3 py-3 text-left tap-feedback"
                             }
                           >
                             <div className="text-[11px] uppercase tracking-wider text-[var(--color-muted)]">
@@ -254,7 +255,7 @@ export function WaitlistCTA() {
                       </div>
                     </div>
 
-                    <div className="mt-2 hidden xs:grid xs:grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2">
+                    <div className="mt-2 hidden sm:grid sm:grid-cols-3 md:grid-cols-4 gap-2">
                       {slots.map((s, i) => (
                         <button
                           key={i}
@@ -374,14 +375,14 @@ function ThankYou({
         <X className="size-4" />
       </button>
 
-      <div className="relative p-6 md:p-10 lg:p-14 grid lg:grid-cols-12 gap-10">
+      <div className="relative p-4 xs:p-5 sm:p-6 md:p-10 lg:p-14 grid lg:grid-cols-12 gap-8 lg:gap-10">
         <div className="lg:col-span-7">
-          <span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-3 py-1.5 text-xs font-medium text-white/85">
+          <span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-3 py-1.5 text-[11px] sm:text-xs font-medium text-white/85">
             <span className="size-1.5 rounded-full bg-[var(--color-accent-bright)] animate-pulse-soft" />
             Booking confirmed
           </span>
 
-          <h2 className="mt-5 font-display text-3xl sm:text-4xl md:text-5xl leading-[1.05] font-semibold tracking-[-0.025em] text-white text-balance">
+          <h2 className="mt-4 font-display text-2xl xs:text-3xl sm:text-4xl md:text-5xl leading-[1.06] font-semibold tracking-[-0.025em] text-white text-balance">
             🎉 You&apos;re in{form.firstName ? `, ${form.firstName}` : ""}. Your AI Category Manager is standing by.
           </h2>
 
@@ -401,10 +402,10 @@ function ThankYou({
             A calendar invite is on its way to <span className="text-white">{form.email || "your inbox"}</span>. The Zoom link is inside. We&apos;ll see you then.
           </p>
 
-          <div className="mt-10 grid sm:grid-cols-3 gap-4">
+          <div className="mt-8 sm:mt-10 grid xs:grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4">
             <Step n="01" title="Check your inbox" body="Look for an email from Marcus within 5 minutes. If it's not in primary, check Promotions or spam." />
-            <Step n="02" title="Have these ready" body={`Shopify admin login (we install live) + ${form.channel === "slack" ? "Slack" : form.channel === "whatsapp" ? "WhatsApp" : "WhatsApp or Slack"} open on phone or desktop.`} />
-            <Step n="03" title="Watch 90s video" body="A real WhatsApp conversation with the agent — stockout alert to PO sent, in 4 messages." />
+            <Step n="02" title="Have these ready" body={`Shopify admin login (we install live) + ${form.channel === "slack" ? "Slack" : form.channel === "whatsapp" ? "WhatsApp" : "WhatsApp or Slack"} open.`} />
+            <Step n="03" title="Watch 90s video" body="A real WhatsApp conversation — stockout alert to PO sent, in 4 messages." />
           </div>
         </div>
 

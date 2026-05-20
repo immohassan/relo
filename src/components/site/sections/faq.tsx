@@ -48,7 +48,7 @@ export function FAQ() {
               <MessageCircleQuestion className="size-3.5" />
               FAQ
             </span>
-            <h2 className="mt-5 font-display text-3xl sm:text-4xl md:text-5xl leading-[1.05] font-semibold tracking-[-0.025em] text-balance">
+            <h2 className="mt-5 font-display text-[26px] leading-[1.1] xs:text-3xl sm:text-4xl md:text-5xl md:leading-[1.05] font-semibold tracking-[-0.02em] text-balance">
               <SplitWords text="Frequently asked questions." />
             </h2>
             <p className="mt-5 text-[var(--color-muted)] text-pretty">

@@ -72,7 +72,7 @@ export function HowItWorks() {
             <span className="size-1.5 rounded-full bg-[var(--color-accent-bright)]" />
             By end of week one
           </span>
-          <h2 className="mt-5 font-display text-3xl sm:text-4xl md:text-5xl lg:text-[52px] leading-[1.06] font-semibold tracking-[-0.025em] text-balance text-white">
+          <h2 className="mt-5 font-display text-[26px] leading-[1.1] xs:text-3xl sm:text-4xl md:text-5xl lg:text-[52px] lg:leading-[1.06] font-semibold tracking-[-0.02em] text-balance text-white">
             <SplitWords text="Every replenishment and markdown decision in your store — handled without you opening a spreadsheet once." />
           </h2>
 

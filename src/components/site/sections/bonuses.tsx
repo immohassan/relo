@@ -55,7 +55,7 @@ export function Bonuses() {
             <Gift className="size-3.5" />
             Bonuses for booking this week
           </span>
-          <h2 className="mt-5 font-display text-3xl sm:text-4xl md:text-5xl leading-[1.06] font-semibold tracking-[-0.025em] text-balance">
+          <h2 className="mt-5 font-display text-[26px] leading-[1.1] xs:text-3xl sm:text-4xl md:text-5xl md:leading-[1.06] font-semibold tracking-[-0.02em] text-balance">
             <SplitWords text="Plus — when you book your demo this week, you get these bonuses free." />
           </h2>
           <p className="mt-5 text-base md:text-lg text-[var(--color-muted)] text-pretty">
@@ -101,7 +101,7 @@ export function Bonuses() {
                   <CountUp value={247} className="text-white" />/500 spots taken
                 </span>
               </span>
-              <h3 className="mt-5 font-display text-2xl sm:text-3xl md:text-[28px] lg:text-4xl leading-[1.1] font-semibold tracking-tight text-white text-balance">
+              <h3 className="mt-5 font-display text-[22px] xs:text-2xl sm:text-3xl md:text-[28px] lg:text-4xl leading-[1.1] font-semibold tracking-tight text-white text-balance">
                 <SplitWords text="Let's recap everything you get when you book your demo this week." />
               </h3>
               <p className="mt-4 text-sm md:text-[15px] text-white/75 leading-relaxed">

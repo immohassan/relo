@@ -44,8 +44,8 @@ export function Hero() {
       <BarChart className="absolute top-2 right-2 w-24 text-[var(--color-accent)] opacity-50 lg:hidden -z-10" />
       <div className="absolute inset-0 -z-10 bg-noise opacity-40" />
 
-      <div className="container-tight pt-8 sm:pt-12 lg:pt-20 pb-16 md:pb-24">
-        <div className="grid items-center gap-8 sm:gap-10 lg:grid-cols-12 lg:gap-14">
+      <div className="container-tight pt-6 sm:pt-12 lg:pt-20 pb-14 md:pb-24">
+        <div className="grid items-center gap-7 sm:gap-10 lg:grid-cols-12 lg:gap-14">
           <div className="lg:col-span-7 order-2 lg:order-1">
             <motion.div
               initial={{ opacity: 0, y: 16 }}
@@ -61,7 +61,7 @@ export function Hero() {
               />
             </motion.div>
 
-            <h1 className="mt-5 font-display text-[34px] leading-[1.05] sm:text-5xl md:text-6xl lg:text-[64px] lg:leading-[1.04] font-semibold tracking-[-0.03em] text-foreground text-balance">
+            <h1 className="mt-5 font-display text-[28px] leading-[1.08] xs:text-[32px] xs:leading-[1.06] sm:text-5xl md:text-6xl lg:text-[64px] lg:leading-[1.04] font-semibold tracking-[-0.025em] text-foreground text-balance">
               <SplitWords text="The 5-day email series showing where your Shopify store is" />{" "}
               <span className="relative inline-block">
                 <ShimmerText className="relative z-10">leaking money</ShimmerText>
@@ -78,7 +78,7 @@ export function Hero() {
               initial={{ opacity: 0, y: 14 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.12 }}
-              className="mt-5 max-w-xl text-[15px] sm:text-base md:text-lg text-[var(--color-muted)] text-pretty"
+              className="mt-4 max-w-xl text-[14px] sm:text-base md:text-lg text-[var(--color-muted)] text-pretty"
             >
               For Shopify operators doing $500K–$10M tired of running buying and markdowns on Sunday nights. Five short emails. One per day. Free forever.
             </motion.p>
@@ -177,38 +177,38 @@ function HeroVisual() {
     <div className="relative mx-auto w-full max-w-[360px] sm:max-w-md lg:max-w-none">
       <div className="absolute -inset-8 bg-gradient-to-br from-[var(--color-accent-soft)] via-transparent to-[var(--color-accent-bright)]/30 rounded-[40px] blur-3xl opacity-80" />
 
-      <div className="absolute -top-3 -left-4 sm:-left-6 z-20 rotate-[-6deg] rounded-2xl bg-white hairline px-3 py-2 shadow-[var(--shadow-elevated)] animate-float">
-        <div className="flex items-center gap-2">
-          <span className="grid place-items-center size-7 rounded-lg bg-[var(--color-accent-soft)] text-[var(--color-accent)]">
-            <Bell className="size-3.5" />
+      <div className="absolute -top-2 -left-2 sm:-top-3 sm:-left-6 z-20 rotate-[-6deg] rounded-xl sm:rounded-2xl bg-white hairline px-2 py-1.5 sm:px-3 sm:py-2 shadow-[var(--shadow-elevated)] animate-float">
+        <div className="flex items-center gap-1.5 sm:gap-2">
+          <span className="grid place-items-center size-6 sm:size-7 rounded-lg bg-[var(--color-accent-soft)] text-[var(--color-accent)]">
+            <Bell className="size-3 sm:size-3.5" />
           </span>
           <div className="leading-tight">
-            <div className="text-[9px] uppercase tracking-wider text-[var(--color-muted)]">
+            <div className="text-[8px] sm:text-[9px] uppercase tracking-wider text-[var(--color-muted)]">
               Stockout risk
             </div>
-            <div className="font-display text-[12px] font-semibold">17 days out</div>
+            <div className="font-display text-[11px] sm:text-[12px] font-semibold">17 days out</div>
           </div>
         </div>
       </div>
 
-      <div className="absolute -bottom-2 -left-3 sm:-bottom-3 sm:-left-5 z-20 rotate-[-3deg] rounded-2xl bg-white hairline p-3 shadow-[var(--shadow-elevated)] animate-float [animation-delay:1.5s]">
-        <div className="flex items-center gap-2">
-          <span className="grid place-items-center size-7 rounded-lg bg-emerald-100 text-emerald-700">
-            <TrendingUp className="size-3.5" />
+      <div className="absolute -bottom-1 -left-2 sm:-bottom-3 sm:-left-5 z-20 rotate-[-3deg] rounded-xl sm:rounded-2xl bg-white hairline p-2 sm:p-3 shadow-[var(--shadow-elevated)] animate-float [animation-delay:1.5s]">
+        <div className="flex items-center gap-1.5 sm:gap-2">
+          <span className="grid place-items-center size-6 sm:size-7 rounded-lg bg-emerald-100 text-emerald-700">
+            <TrendingUp className="size-3 sm:size-3.5" />
           </span>
           <div className="leading-tight">
-            <div className="text-[9px] uppercase tracking-wider text-[var(--color-muted)]">
+            <div className="text-[8px] sm:text-[9px] uppercase tracking-wider text-[var(--color-muted)]">
               Cash freed
             </div>
-            <div className="font-display text-[12px] font-semibold text-emerald-700">+$38,400</div>
+            <div className="font-display text-[11px] sm:text-[12px] font-semibold text-emerald-700">+$38,400</div>
           </div>
         </div>
-        <SparkLine className="mt-1.5 h-8 w-28 text-emerald-600" />
+        <SparkLine className="mt-1 sm:mt-1.5 h-6 sm:h-8 w-20 sm:w-28 text-emerald-600" />
       </div>
 
-      <div className="absolute -top-2 -right-2 sm:-top-4 sm:-right-4 z-20 rotate-3 rounded-2xl bg-[var(--color-accent-deep)] text-white px-3 py-2 shadow-[var(--shadow-elevated)] animate-float [animation-delay:0.8s]">
-        <div className="text-[9px] uppercase tracking-wider text-white/65">PO drafted</div>
-        <div className="font-display text-[13px] font-semibold">$11,400 saved</div>
+      <div className="absolute -top-1 -right-1 sm:-top-4 sm:-right-4 z-20 rotate-3 rounded-xl sm:rounded-2xl bg-[var(--color-accent-deep)] text-white px-2 py-1.5 sm:px-3 sm:py-2 shadow-[var(--shadow-elevated)] animate-float [animation-delay:0.8s]">
+        <div className="text-[8px] sm:text-[9px] uppercase tracking-wider text-white/65">PO drafted</div>
+        <div className="font-display text-[11px] sm:text-[13px] font-semibold">$11,400 saved</div>
       </div>
 
       <div className="relative rounded-[28px] bg-white hairline shadow-[var(--shadow-lifted)] overflow-hidden">

@@ -33,7 +33,7 @@ export function DayInLife() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.55, delay: 0.05 }}
-            className="mt-5 font-display text-[28px] leading-[1.1] sm:text-4xl md:text-5xl lg:text-[56px] lg:leading-[1.05] font-semibold tracking-[-0.025em] text-balance"
+            className="mt-5 font-display text-[24px] leading-[1.12] xs:text-[28px] xs:leading-[1.1] sm:text-4xl md:text-5xl lg:text-[56px] lg:leading-[1.05] font-semibold tracking-[-0.02em] text-balance"
           >
             Stop being your own buyer, your own merchandiser, and your own markdown manager.
             <span className="block mt-2 relative">
@@ -98,7 +98,7 @@ export function DayInLife() {
 
         <div className="mt-16 md:mt-24 grid lg:grid-cols-12 gap-8 lg:gap-12">
           <div className="lg:col-span-5">
-            <h3 className="font-display text-2xl sm:text-3xl md:text-4xl font-semibold tracking-[-0.02em] leading-tight">
+            <h3 className="font-display text-[22px] xs:text-2xl sm:text-3xl md:text-4xl font-semibold tracking-[-0.02em] leading-tight">
               <SplitWords text="You're one AI Category Manager away from getting your Sunday nights back." />
             </h3>
             <p className="mt-4 text-[var(--color-muted)] leading-relaxed">
